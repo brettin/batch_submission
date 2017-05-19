@@ -1,0 +1,2 @@
+ws-create -u [% folder %] Folder
+ws-create -u [% folder %]/[% dest %] Reads [% source %] 

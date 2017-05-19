@@ -1,0 +1,17 @@
+{
+    "min_contig_cov": 5,
+    "min_contig_len": 300,
+    "output_file": "[% dest %]",
+    "output_path": "[% folder %]",
+    "paired_end_libs": [
+        {
+            "interleaved": "false",
+            "platform": "infer",
+            "read1": "[% read1 %]",
+            "read2": "[% read2 %]",
+            "read_orientation_outward": "false"
+        }
+    ],
+    "recipe": "[% recipe %]",
+    "reference_assembly": ""
+}
