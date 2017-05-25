@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+unless (@ARGV>=3) {
+	print "Usage: tpage_command <client> <prefix> <method> <optional author>\n";
+	exit;
+}
+
+my $kb_client = $ARGV[0];
+my $kb_prefix = $ARGV[1];
+my $kb_method = $ARGV[2];
+my $kb_author = "\"KBase\"";
+$kb_author    = "\"$ARGV[3]\"" if defined $ARGV[3];
+
+$kb_script = $kb_prefix . "-" . $kb_method;
+
+system ("tpage --define kb_client=$kb_client --define kb_method=$kb_method --define kb_author=$kb_author script.tt > $kb_script.pl");

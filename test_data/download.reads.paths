@@ -1,0 +1,4 @@
+Batch_Test/fastq_files/SAMN04901663/SRR4417569_1.small.fastq.gz	test_data/SAMN04901663/SRR4417569_1.small.fastq.gz.1
+Batch_Test/fastq_files/SAMN04901663/SRR4417569_2.small.fastq.gz	test_data/SAMN04901663/SRR4417569_2.small.fastq.gz.1
+Batch_Test/fastq_files/SAMN04901664/SRR4417570_1.small.fastq.gz	test_data/SAMN04901664/SRR4417570_1.small.fastq.gz.1
+Batch_Test/fastq_files/SAMN04901664/SRR4417570_2.small.fastq.gz	test_data/SAMN04901664/SRR4417570_2.small.fastq.gz.1
