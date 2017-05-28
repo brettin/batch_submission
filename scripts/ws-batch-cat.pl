@@ -8,18 +8,18 @@ use IPC::Run 'run';
 my $man  = 0;
 my $help = 0;
 my ($in, $out);
-my ($user, $localfile);
+my ($user, $local_path);
 
 GetOptions(
 	'h'	=> \$help,
-    'i=s'   => \$in,
-    'o=s'   => \$out,
+	'i=s'   => \$in,
+	'o=s'   => \$out,
 	'help'	=> \$help,
 	'man'	=> \$man,
 	'input=s'  => \$in,
 	'output=s' => \$out,
-    'user=s' => \$user,
-    'u=s'    => \$user,
+	'user=s' => \$user,
+	'u=s'    => \$user,
 
 ) or pod2usage(0);
 
@@ -73,11 +73,13 @@ while(<$ih>) {
 		die "local_path $local_path already exists";
 	}
 
-	# fix this to grab stdout to a file.
 	my $cmd = ["ws-cat", "--shock", "$ws_base/$remote_path"];
-	print STDERR join(" ", @$cmd), " > $local_path\n";
+	# print STDERR join(" ", @$cmd), " > $local_path\n";
 
 	my $ok = IPC::Run::run($cmd, ">", $local_path);
+	die "cmd: ", join(" ", @$cmd), " failed" unless $ok;
+
+	print $oh "$remote_path\t$local_path\n";
 }
 
 
