@@ -3,6 +3,8 @@ use [% kb_client %];
 use Getopt::Long; 
 use JSON;
 use Pod::Usage;
+use File::Basename;
+use IPC::Run 'run';
 
 my $man  = 0;
 my $help = 0;
